@@ -37,7 +37,9 @@ export default new Vuex.Store({
     },
     updateTodo(state, todo) {
       let index = state.todos.findIndex((t) => t.id == todo.id);
-      console.log(index);
+      if (index != 1) {
+        state.todos[index] = todo;
+      }
     },
   },
   plugins: [createPersistedState()],
